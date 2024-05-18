@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {% load static %}
+    <title>Manage Users - CRUD - User Data</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+  </head>
+<body>
+    <main>
+        <div class="hero py-5 bg-light">
+           <div class="container text-center"> 
+              <h2 class="mb-3">
+        <div class="py-5">
+           <div class="container"> 
+  
+              <div class="row justify-content-center ">
+                 <div class="col-lg-5 col-md-6"> 
+                    
+                    <form method="post">
+                        {% csrf_token %}
+                        <!-- {{ form.as_p }} -->
+                       <div class="form-item card card-default my-4">
+                          <div class="card-body">
+                             <div class="form-group">
+                                <input id="username" type="text" placeholder="Username" class="form-control my-2" name="username" value="{{ form.instance.username }}"/>
+                                <input id="password" type="password" placeholder="Password" class="form-control my-2" name="password" value="{{ form.instance.password }}"/>
+                                <input id="address" type="address" placeholder="Address" class="form-control my-2" name="address"  value="{{ form.instance.address }}"/>
+                             </div>  
+                          </div>
+                       </div>
+                       <div class="mt-4 row">
+                           <div class="col">
+                               <a href="{% url 'user_list' %}" class="btn btn-danger w-100">Back</a>
+                            </div>
+                            <div class="col">
+                               <button class="btn btn-primary w-100">Submit</button>
+                            </div>
+                       </div>
+                    </form>
+  
+                 </div>
+               </div>  
+              
+           </div>
+        </div>
+      </main>
+</body>
+</html>
